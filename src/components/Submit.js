@@ -66,11 +66,11 @@ const Submit = () => {
         onChange={(e) => setDay(e.target.value)}
         placeholder="Day"
       ></input>
-      <input
+      <textarea
         type="text"
         onChange={(e) => setContent(e.target.value)}
         placeholder="Content"
-      ></input>
+      ></textarea>
       <input
         type="text"
         onChange={(e) => setCodeLink(e.target.value)}

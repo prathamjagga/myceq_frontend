@@ -1,10 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ReactCodeSinppet from "react-code-snippet";
+
+import { CodeBlock, dracula } from "react-code-blocks";
+
 const AssignmentPage = () => {
   const params = useParams();
   console.log("params", params);
   const [assData, setAssData] = useState({});
+  const [dataLoaded, setDataLoaded] = useState(false);
   useEffect(() => {
     async function func() {
       console.log("rendered");
@@ -13,7 +18,9 @@ const AssignmentPage = () => {
       );
       console.log("fetched", data.data);
       data = data.data;
+
       setAssData(data);
+      setDataLoaded(true);
     }
     func();
   }, []);
@@ -30,7 +37,10 @@ const AssignmentPage = () => {
         </h3>
       )}
       <h3>Content: </h3>
-      <p>{assData.content}</p>
+      {/* <p>{assData.content}</p> */}
+      {dataLoaded && (
+        <CodeBlock text={assData.content} language="python" theme={dracula} />
+      )}
     </>
   );
 };

@@ -5,8 +5,8 @@ const AssignmentPage = () => {
   const params = useParams();
   console.log("params", params);
   const [assData, setAssData] = useState({});
-  useEffect(
-    () => async () => {
+  useEffect(() => {
+    async function func() {
       console.log("rendered");
       let data = await axios.get(
         `https://myceq-backend.onrender.com/getone/${params.id}`
@@ -14,9 +14,9 @@ const AssignmentPage = () => {
       console.log("fetched", data.data);
       data = data.data;
       setAssData(data);
-    },
-    []
-  );
+    }
+    func();
+  }, []);
   return (
     <>
       <div>Assignment Info</div>

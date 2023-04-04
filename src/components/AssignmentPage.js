@@ -15,7 +15,7 @@ const AssignmentPage = () => {
       data = data.data;
       setAssData(data);
     },
-    [params]
+    []
   );
   return (
     <>

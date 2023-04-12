@@ -29,7 +29,7 @@ const AssignmentPage = () => {
       {!dataLoaded && (
         <p>
           Loading the content... It may take time due to the use of a weak
-          deployment platform.
+          deployment platform. Please refresh after a minute.
         </p>
       )}
       <div>Assignment Info</div>

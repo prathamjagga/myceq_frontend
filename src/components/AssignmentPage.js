@@ -26,6 +26,12 @@ const AssignmentPage = () => {
   }, []);
   return (
     <>
+      {!dataLoaded && (
+        <p>
+          Loading the content... It may take time due to the use of a weak
+          deployment platform.
+        </p>
+      )}
       <div>Assignment Info</div>
       <h3>Assignment Name: {assData.name}</h3>
       <h3>
